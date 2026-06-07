@@ -10,7 +10,8 @@
     />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="stylesheet" href="styles.css?v=44" />
+    <link rel="stylesheet" href="styles.css?v=68" />
+    <link rel="stylesheet" href="desktop.css?v=2" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -54,9 +55,13 @@
       <section class="intro section-pad" id="about">
         <div class="intro-visual reveal">
           <img
-            src="Files/WhatWeBuild.jpg"
-            alt="Brand team planning a creator campaign"
+            src="assets/generated/brand-deals-video-mosaic.png"
+            alt="A mosaic of creator campaign content"
           />
+          <div class="deals-counter" data-deals-counter>
+            <strong><span data-deals-number>0</span><span>+</span></strong>
+            <p>Brand Deals Signed<br />and Executed</p>
+          </div>
         </div>
         <div class="intro-content">
           <div class="section-copy reveal">
@@ -174,44 +179,58 @@
           <div class="media-stage">
             <div class="media-orbit" id="influencers" aria-label="Influencer campaign visuals">
               <figure class="bubble bubble-large">
-                <video autoplay muted loop playsinline preload="metadata">
-                  <source src="Files/Bubble2.mp4" type="video/mp4" />
-                </video>
+                <span class="bubble-media">
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source src="Files/Bubble2.mp4" type="video/mp4" />
+                  </video>
+                </span>
               </figure>
               <figure class="bubble bubble-mid">
-                <img
-                  src="Files/Bubble1.jpg"
-                  alt="Creator reviewing campaign content"
-                />
+                <span class="bubble-media">
+                  <img
+                    src="Files/Bubble1.jpg"
+                    alt="Creator reviewing campaign content"
+                  />
+                </span>
               </figure>
               <figure class="bubble bubble-center">
-                <video autoplay muted loop playsinline preload="metadata">
-                  <source src="Files/Bubble7.mp4" type="video/mp4" />
-                </video>
+                <span class="bubble-media">
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source src="Files/Bubble7.mp4" type="video/mp4" />
+                  </video>
+                </span>
               </figure>
               <figure class="bubble bubble-small">
-                <img
-                  src="Files/Bubble3.jpg"
-                  alt="Product styling for creator content"
-                />
+                <span class="bubble-media">
+                  <img
+                    src="Files/Bubble3.jpg"
+                    alt="Product styling for creator content"
+                  />
+                </span>
               </figure>
               <figure class="bubble bubble-connector">
-                <img
-                  src="Files/Bubble4.jpg"
-                  alt="Campaign content preview"
-                />
+                <span class="bubble-media">
+                  <img
+                    src="Files/Bubble4.jpg"
+                    alt="Campaign content preview"
+                  />
+                </span>
               </figure>
               <figure class="bubble bubble-pill">
-                <img
-                  src="Files/Bubble5.jpg"
-                  alt="Brand team reviewing campaign direction"
-                />
+                <span class="bubble-media">
+                  <img
+                    src="Files/Bubble5.jpg"
+                    alt="Brand team reviewing campaign direction"
+                  />
+                </span>
               </figure>
               <figure class="bubble bubble-late bubble-video">
-                <img
-                  src="Files/Bubble6.jpg"
-                  alt="Campaign content planning session"
-                />
+                <span class="bubble-media">
+                  <img
+                    src="Files/Bubble6.jpg"
+                    alt="Campaign content planning session"
+                  />
+                </span>
               </figure>
             </div>
           </div>
@@ -317,9 +336,15 @@
     <footer class="site-footer">
       <img src="assets/bb-logo.jpg" alt="" />
       <p>Bravo & Beyond</p>
-      <span>&copy; 2026 Bravo & Beyond. All rights reserved.</span>
+      <span class="footer-legal">
+        &copy; 2026 Bravo & Beyond. All rights reserved.
+        <small>
+          Developed by
+          <a href="https://withextech.com" target="_blank" rel="noopener">Withex Technologies</a>
+        </small>
+      </span>
     </footer>
 
-    <script src="script.js?v=28"></script>
+    <script src="script.js?v=36"></script>
   </body>
 </html>

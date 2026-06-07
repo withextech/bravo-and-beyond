@@ -1,0 +1,85 @@
+/* Desktop-only behavior. Keep all phone layout rules in styles.css untouched. */
+@media (min-width: 981px) {
+  body:not(.admin-page) main > section.help {
+    min-height: 310vh;
+    padding-block: 0;
+    overflow: visible;
+  }
+
+  .help-grid {
+    position: relative;
+    top: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(360px, 0.78fr);
+    grid-template-rows: none;
+    gap: clamp(34px, 7vw, 96px);
+    min-height: 100svh;
+    height: 100svh;
+    align-items: center;
+  }
+
+  .help.is-desktop-pinned .help-grid {
+    position: fixed;
+    top: 0;
+    right: clamp(18px, 5vw, 72px);
+    left: clamp(18px, 5vw, 72px);
+    z-index: 3;
+    width: auto;
+  }
+
+  .help.is-desktop-ended .help-grid {
+    position: absolute;
+    top: auto;
+    right: clamp(18px, 5vw, 72px);
+    bottom: 0;
+    left: clamp(18px, 5vw, 72px);
+    z-index: 3;
+    width: auto;
+  }
+
+  .help-left {
+    position: relative;
+    inset: auto;
+    z-index: 4;
+    display: grid;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    align-items: center;
+    padding: clamp(92px, 10vh, 116px) 0 clamp(42px, 6vh, 72px);
+    pointer-events: auto;
+  }
+
+  .help-intro,
+  .help.section-pad .help-intro {
+    position: relative;
+    top: auto;
+    display: grid;
+    width: auto;
+    max-height: none;
+    margin-inline: 0;
+    padding: 0;
+    gap: clamp(12px, 2vw, 18px);
+    pointer-events: auto;
+  }
+
+  .media-stage {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    width: auto;
+    height: 100%;
+    min-height: 100svh;
+    overflow: visible;
+    pointer-events: auto;
+  }
+
+  .media-orbit {
+    position: relative;
+    top: auto;
+    width: auto;
+    height: 100%;
+    min-height: min(760px, calc(100svh - 116px));
+    overflow: visible;
+  }
+}

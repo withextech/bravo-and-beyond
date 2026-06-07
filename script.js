@@ -3,6 +3,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
 const revealItems = document.querySelectorAll(".reveal");
 const helpSection = document.querySelector(".help");
+const helpLeft = document.querySelector(".help-left");
 const orbit = document.querySelector(".media-orbit");
 const bubbles = document.querySelectorAll(".media-orbit .bubble");
 const helpSwitcher = document.querySelector(".help-switcher");
@@ -18,6 +19,8 @@ const talentFilters = document.querySelectorAll("[data-talent-filter]");
 const talentCards = document.querySelectorAll(".talent-card");
 const talentEmpty = document.querySelector("[data-talent-empty]");
 const serviceCards = document.querySelectorAll("[data-service-card]");
+const dealsCounter = document.querySelector("[data-deals-counter]");
+const dealsNumber = document.querySelector("[data-deals-number]");
 const talentModal = document.querySelector("[data-talent-modal]");
 const talentModalImage = document.querySelector("[data-modal-image]");
 const talentModalName = document.querySelector("[data-modal-name]");
@@ -32,6 +35,16 @@ const talentSocialLinks = {
   facebook: document.querySelector("[data-social-facebook]"),
   youtube: document.querySelector("[data-social-youtube]"),
 };
+
+bubbles.forEach((bubble) => {
+  const media = bubble.querySelector("img, video");
+  if (!media || media.parentElement.classList.contains("bubble-media")) return;
+
+  const mediaFrame = document.createElement("span");
+  mediaFrame.className = "bubble-media";
+  bubble.insertBefore(mediaFrame, media);
+  mediaFrame.appendChild(media);
+});
 
 const setHeaderState = () => {
   if (!header) return;
@@ -105,9 +118,73 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
+if (dealsCounter && dealsNumber) {
+  const dealsObserver = new IntersectionObserver(
+    ([entry], observer) => {
+      if (!entry.isIntersecting) return;
+
+      const target = 1200;
+      const duration = 1700;
+      const startTime = performance.now();
+
+      const rollNumber = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        dealsNumber.textContent = Math.floor(target * eased).toLocaleString();
+        if (progress < 1) window.requestAnimationFrame(rollNumber);
+      };
+
+      window.requestAnimationFrame(rollNumber);
+      observer.unobserve(entry.target);
+    },
+    { threshold: 0.2 }
+  );
+
+  dealsObserver.observe(dealsCounter);
+}
+
+let mobileHelpPinStart = null;
+let mobileHelpViewportWidth = null;
+
 const updateOrbit = () => {
   if (!orbit || !helpSection) return;
   const rect = helpSection.getBoundingClientRect();
+  const isMobileHelp = window.innerWidth <= 620;
+  const isDesktopHelp = window.innerWidth >= 981;
+  const viewportChanged = mobileHelpViewportWidth !== window.innerWidth;
+
+  if (viewportChanged) {
+    mobileHelpViewportWidth = window.innerWidth;
+    mobileHelpPinStart = null;
+  }
+
+  if (isMobileHelp && helpLeft && mobileHelpPinStart === null) {
+    mobileHelpPinStart = window.scrollY + helpLeft.getBoundingClientRect().top;
+  }
+
+  const shouldPinMobileHelp =
+    isMobileHelp &&
+    mobileHelpPinStart !== null &&
+    window.scrollY >= mobileHelpPinStart &&
+    rect.bottom >= window.innerHeight;
+
+  helpSection.classList.toggle(
+    "is-mobile-pinned",
+    shouldPinMobileHelp
+  );
+  helpSection.classList.toggle(
+    "is-mobile-ended",
+    isMobileHelp && rect.bottom < window.innerHeight
+  );
+  helpSection.classList.toggle(
+    "is-desktop-pinned",
+    isDesktopHelp && rect.top <= 0 && rect.bottom >= window.innerHeight
+  );
+  helpSection.classList.toggle(
+    "is-desktop-ended",
+    isDesktopHelp && rect.bottom < window.innerHeight
+  );
+
   const rawProgress = Math.min(
     Math.max(-rect.top / (rect.height - window.innerHeight), 0),
     1
@@ -123,7 +200,8 @@ const updateOrbit = () => {
     const start = bubbleStarts[index] ?? -0.12 + index * 0.12;
     const end = index === bubbles.length - 1 ? 1.04 : start + 0.78;
     const localProgress = Math.min(Math.max((progress - start) / (end - start), 0), 1);
-    const y = 430 - localProgress * 690;
+    const isMobile = window.innerWidth <= 620;
+    const y = isMobile ? 190 - localProgress * 390 : 430 - localProgress * 690;
     const scale = 0.8 + localProgress * 0.2;
     const fadeOut = localProgress > 0.94 ? (1 - localProgress) / 0.06 : 1;
     const opacity = localProgress <= 0.015 ? 0 : Math.max(0, Math.min(localProgress * 2.1, fadeOut));

@@ -1,0 +1,258 @@
+/* Inner page atmosphere: brand-led, less space-agency, still related to home. */
+body.inner-page:not(.admin-page) {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(9, 124, 202, 0.2), transparent 30rem),
+    radial-gradient(circle at 86% 12%, rgba(226, 179, 104, 0.13), transparent 28rem),
+    radial-gradient(circle at 52% 86%, rgba(10, 67, 108, 0.24), transparent 36rem),
+    linear-gradient(180deg, #02070b 0%, #061521 48%, #03070b 100%);
+}
+
+body.inner-page:not(.admin-page) main > section:not(.hero)::before {
+  opacity: 1;
+}
+
+body.inner-page:not(.admin-page) main > section:not(.page-hero, .mission-vision)::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  display: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.inner-page:not(.admin-page) main > section.page-hero {
+  overflow: hidden;
+  min-height: 100svh;
+  border-bottom: 1px solid rgba(226, 190, 130, 0.18);
+}
+
+body.inner-page:not(.admin-page) .page-hero p,
+body.inner-page:not(.admin-page) .page-hero .eyebrow {
+  color: rgba(246, 251, 255, 0.94);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.92),
+    0 0 18px rgba(0, 0, 0, 0.72);
+}
+
+body.inner-page:not(.admin-page) .page-hero p {
+  font-weight: 650;
+}
+
+body.inner-page:not(.admin-page) main > section.about-hero,
+body.inner-page:not(.admin-page) main > section.services-hero,
+body.inner-page:not(.admin-page) main > section.contact-page-hero {
+  min-height: 100svh;
+}
+
+body.inner-page:not(.admin-page) main > section.page-hero::before {
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(1, 7, 12, 0.62), rgba(2, 18, 30, 0.26)),
+    radial-gradient(circle at 18% 82%, rgba(226, 179, 104, 0.2), transparent 24rem),
+    radial-gradient(circle at 80% 18%, rgba(50, 161, 222, 0.22), transparent 24rem);
+}
+
+body.inner-page:not(.admin-page) main > section.about-hero {
+  background:
+    linear-gradient(135deg, rgba(3, 9, 13, 0.52), rgba(20, 42, 57, 0.2)),
+    radial-gradient(circle at 20% 70%, rgba(226, 179, 104, 0.22), transparent 25rem),
+    var(--hero-image) center / cover;
+}
+
+body.inner-page:not(.admin-page) main > section.services-hero {
+  background:
+    linear-gradient(135deg, rgba(2, 8, 13, 0.56), rgba(3, 38, 58, 0.28)),
+    radial-gradient(circle at 82% 24%, rgba(9, 126, 204, 0.26), transparent 26rem),
+    var(--hero-image) center / cover;
+}
+
+body.inner-page:not(.admin-page) main > section.contact-page-hero {
+  background:
+    linear-gradient(90deg, rgba(2, 8, 12, 0.42), rgba(2, 8, 12, 0.08) 48%, rgba(2, 8, 12, 0.18)),
+    linear-gradient(135deg, rgba(2, 8, 12, 0.18), rgba(19, 40, 50, 0.08)),
+    url("assets/generated/contact-hero-brand-collaboration.png") center / cover;
+}
+
+body.inner-page:not(.admin-page) main > section.editorial-split,
+body.inner-page:not(.admin-page) main > section.about-values,
+body.inner-page:not(.admin-page) main > section.services-section,
+body.inner-page:not(.admin-page) main > section.contact-directory {
+  background: transparent;
+}
+
+body.inner-page:not(.admin-page) main > section.editorial-split::before {
+  background:
+    linear-gradient(135deg, rgba(4, 16, 23, 0.9), rgba(16, 34, 42, 0.72)),
+    radial-gradient(circle at 18% 28%, rgba(226, 179, 104, 0.11), transparent 24rem);
+}
+
+body.inner-page:not(.admin-page) main > section.editorial-split::after {
+  display: block;
+  opacity: 0.72;
+  background:
+    linear-gradient(135deg, rgba(3, 10, 15, 0.7), rgba(4, 20, 30, 0.54)),
+    url("assets/generated/inner-about-constellation-bg.png") center / cover no-repeat;
+}
+
+body.inner-page:not(.admin-page) .about-story .editorial-image::after {
+  display: none;
+}
+
+body.inner-page:not(.admin-page) main > section.about-values::before {
+  background:
+    linear-gradient(135deg, rgba(6, 19, 27, 0.92), rgba(4, 31, 48, 0.72)),
+    linear-gradient(90deg, rgba(226, 179, 104, 0.08) 0 1px, transparent 1px),
+    linear-gradient(0deg, rgba(226, 179, 104, 0.055) 0 1px, transparent 1px);
+  background-size: auto, 84px 84px, 84px 84px;
+}
+
+body.inner-page:not(.admin-page) main > section.about-values::after {
+  display: block;
+  opacity: 0.6;
+  background:
+    linear-gradient(135deg, rgba(3, 10, 15, 0.78), rgba(4, 24, 37, 0.62)),
+    url("assets/generated/inner-contact-constellation-bg.png") center / cover no-repeat;
+}
+
+body.inner-page:not(.admin-page) .values-grid {
+  gap: 12px;
+  background: transparent;
+}
+
+body.inner-page:not(.admin-page) .value-card,
+body.inner-page:not(.admin-page) .value-card:nth-child(2),
+body.inner-page:not(.admin-page) .value-card:nth-child(3),
+body.inner-page:not(.admin-page) .value-card:nth-child(4) {
+  border: 1px solid rgba(226, 190, 130, 0.15);
+  border-radius: 22px;
+  color: white;
+  background:
+    radial-gradient(circle at 86% 12%, rgba(226, 179, 104, 0.1), transparent 30%),
+    linear-gradient(135deg, rgba(7, 24, 35, 0.9), rgba(5, 41, 63, 0.7));
+  box-shadow: 0 20px 64px rgba(0, 5, 10, 0.28);
+}
+
+body.inner-page:not(.admin-page) .value-card h3,
+body.inner-page:not(.admin-page) .value-card p,
+body.inner-page:not(.admin-page) .value-card:nth-child(2) h3,
+body.inner-page:not(.admin-page) .value-card:nth-child(2) p {
+  color: white;
+}
+
+body.inner-page:not(.admin-page) .value-card p {
+  color: rgba(218, 235, 243, 0.72);
+}
+
+body.inner-page:not(.admin-page) .mission-vision {
+  background:
+    linear-gradient(135deg, rgba(1, 7, 12, 0.98), rgba(6, 34, 52, 0.92));
+}
+
+body.inner-page:not(.admin-page) .mission-panel {
+  background:
+    linear-gradient(135deg, rgba(226, 179, 104, 0.16), rgba(5, 22, 32, 0.9)),
+    url("assets/generated/about-mission-strategy.png") left center / cover;
+}
+
+body.inner-page:not(.admin-page) .mission-panel.is-dark {
+  background:
+    linear-gradient(135deg, rgba(1, 9, 15, 0.88), rgba(2, 35, 55, 0.58)),
+    radial-gradient(circle at 78% 20%, rgba(226, 190, 130, 0.2), transparent 24rem),
+    radial-gradient(circle at 22% 74%, rgba(35, 146, 202, 0.18), transparent 26rem),
+    url("assets/generated/inner-vision-creative-bg.png") center / cover;
+}
+
+body.inner-page:not(.admin-page) main > section.services-section::before {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(32, 142, 202, 0.16), transparent 26rem),
+    linear-gradient(135deg, rgba(0, 3, 7, 0.96), rgba(2, 18, 28, 0.92) 48%, rgba(6, 36, 54, 0.82));
+}
+
+body.inner-page:not(.admin-page) main > section.services-section::after {
+  display: block;
+  opacity: 0.68;
+  background:
+    linear-gradient(135deg, rgba(0, 3, 7, 0.76), rgba(2, 18, 28, 0.54)),
+    url("assets/generated/inner-services-constellation-bg.png") center / cover no-repeat;
+}
+
+body.inner-page:not(.admin-page) .services-section .service-card {
+  background:
+    radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), rgba(226, 179, 104, 0.14), transparent 0 30%),
+    linear-gradient(135deg, rgba(5, 23, 34, 0.9), rgba(6, 41, 63, 0.74));
+}
+
+body.inner-page:not(.admin-page) main > section.contact-directory {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(226, 179, 104, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 30%, rgba(36, 146, 202, 0.16), transparent 30rem),
+    linear-gradient(135deg, rgba(2, 8, 13, 0.96), rgba(4, 22, 32, 0.9));
+}
+
+body.inner-page:not(.admin-page) main > section.contact-directory::before {
+  background:
+    linear-gradient(120deg, rgba(226, 179, 104, 0.08), transparent 36%),
+    linear-gradient(300deg, rgba(15, 110, 170, 0.14), transparent 42%);
+}
+
+body.inner-page:not(.admin-page) main > section.contact-directory::after {
+  display: block;
+  opacity: 0.62;
+  background:
+    linear-gradient(135deg, rgba(2, 8, 13, 0.72), rgba(4, 22, 32, 0.56)),
+    url("assets/generated/inner-contact-constellation-bg.png") center / cover no-repeat;
+}
+
+body.inner-page:not(.admin-page) main > section.contact-directory {
+  min-height: min(100svh, 900px);
+  align-items: center;
+  padding-block: clamp(38px, 5vh, 64px);
+}
+
+body.inner-page:not(.admin-page) .contact-page-form {
+  align-self: center;
+  gap: 7px;
+  border-radius: 24px;
+  padding: clamp(18px, 2vw, 28px);
+}
+
+body.inner-page:not(.admin-page) .contact-page-form h2 {
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
+}
+
+body.inner-page:not(.admin-page) .contact-page-form > p {
+  margin-bottom: 5px;
+  font-size: clamp(0.88rem, 1.1vw, 1rem);
+  line-height: 1.45;
+}
+
+body.inner-page:not(.admin-page) .contact-page-form label {
+  gap: 5px;
+}
+
+body.inner-page:not(.admin-page) .contact-page-form input,
+body.inner-page:not(.admin-page) .contact-page-form select,
+body.inner-page:not(.admin-page) .contact-page-form textarea {
+  padding-block: 7px 9px;
+}
+
+@media (max-width: 620px) {
+  body.inner-page:not(.admin-page) main > section.page-hero,
+  body.inner-page:not(.admin-page) main > section.about-hero,
+  body.inner-page:not(.admin-page) main > section.services-hero,
+  body.inner-page:not(.admin-page) main > section.contact-page-hero {
+    min-height: 100svh;
+  }
+
+  body.inner-page:not(.admin-page) main > section.contact-directory {
+    min-height: auto;
+    padding-block: 42px;
+  }
+
+  body.inner-page:not(.admin-page) .contact-page-form {
+    gap: 5px;
+    padding: 16px;
+  }
+}
