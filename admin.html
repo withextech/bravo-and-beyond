@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bravo &amp; Beyond Admin</title>
+    <meta
+      name="description"
+      content="Bravo & Beyond admin dashboard shell for managing operations, campaigns, inquiries, payments, and website content."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="styles.css?v=45" />
+  </head>
+  <body class="admin-page">
+    <aside class="admin-sidebar" aria-label="Admin navigation">
+      <a class="admin-brand" href="admin.html" aria-label="Bravo & Beyond admin dashboard">
+        <span class="admin-logo">
+          <img src="assets/admin-bb-logo.jpg" alt="" />
+        </span>
+        <span class="admin-brand-text">
+          <strong>Bravo &amp; Beyond</strong>
+          <span>Admin System</span>
+        </span>
+      </a>
+
+      <nav class="admin-menu" aria-label="Admin menu">
+        <a class="is-active" href="admin.html">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 13h8V3H3v10Z" />
+              <path d="M13 21h8V3h-8v18Z" />
+              <path d="M3 21h8v-6H3v6Z" />
+            </svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6h16v12H4V6Z" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+          </span>
+          <span>Inquiries</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 21V7l8-4 8 4v14" />
+              <path d="M9 21v-8h6v8" />
+              <path d="M8 9h.01" />
+              <path d="M16 9h.01" />
+            </svg>
+          </span>
+          <span>Brands</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 7h16" />
+              <path d="M4 12h16" />
+              <path d="M4 17h10" />
+              <path d="m17 15 3 2-3 2v-4Z" />
+            </svg>
+          </span>
+          <span>Campaigns</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 11a4 4 0 1 0-8 0" />
+              <path d="M4 21a8 8 0 0 1 16 0" />
+              <path d="M18 8h3" />
+              <path d="M19.5 6.5v3" />
+            </svg>
+          </span>
+          <span>Influencers</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 5h14v16H5V5Z" />
+              <path d="M8 3v4" />
+              <path d="M16 3v4" />
+              <path d="M5 10h14" />
+            </svg>
+          </span>
+          <span>Calendar</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 7h16v10H4V7Z" />
+              <path d="M4 10h16" />
+              <path d="M8 15h4" />
+            </svg>
+          </span>
+          <span>Payments</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 6h13" />
+              <path d="M8 12h13" />
+              <path d="M8 18h13" />
+              <path d="m3 6 1 1 2-2" />
+              <path d="m3 12 1 1 2-2" />
+              <path d="m3 18 1 1 2-2" />
+            </svg>
+          </span>
+          <span>Tasks</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 4h14v16H5V4Z" />
+              <path d="M8 8h8" />
+              <path d="M8 12h4" />
+              <path d="m14 16 2 2 4-5" />
+            </svg>
+          </span>
+          <span>Content Approvals</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 9v6" />
+              <path d="M9 9h2l7-4v14l-7-4H9V9Z" />
+              <path d="M9 15v4" />
+            </svg>
+          </span>
+          <span>Announcements</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 5h16v14H4V5Z" />
+              <path d="M4 9h16" />
+              <path d="M8 13h4" />
+              <path d="M8 16h8" />
+            </svg>
+          </span>
+          <span>Website CMS</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 5h14v14H5V5Z" />
+              <path d="m5 16 4-4 3 3 2-2 5 5" />
+              <path d="M15 9h.01" />
+            </svg>
+          </span>
+          <span>Media Library</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 19V5" />
+              <path d="M5 19h14" />
+              <path d="M8 16v-4" />
+              <path d="M12 16V8" />
+              <path d="M16 16v-6" />
+            </svg>
+          </span>
+          <span>Reports</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 19a6 6 0 0 0-12 0" />
+              <path d="M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+              <path d="M18 8v6" />
+              <path d="M21 11h-6" />
+            </svg>
+          </span>
+          <span>Users</span>
+        </a>
+        <a href="#">
+          <span class="admin-menu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+              <path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.5-2.4 1a7 7 0 0 0-2.1-1.2L14 3h-4l-.4 2.6a7 7 0 0 0-2.1 1.2l-2.4-1-2 3.5 2 1.5a7.7 7.7 0 0 0 0 2.4l-2 1.5 2 3.5 2.4-1a7 7 0 0 0 2.1 1.2L10 21h4l.4-2.6a7 7 0 0 0 2.1-1.2l2.4 1 2-3.5-2-1.5c.1-.4.1-.8.1-1.2Z" />
+            </svg>
+          </span>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="admin-shell">
+      <header class="admin-topbar">
+        <form class="admin-search" role="search">
+          <label class="sr-only" for="admin-search">Search admin</label>
+          <span aria-hidden="true"></span>
+          <input id="admin-search" type="search" placeholder="Search inquiries, brands, campaigns..." />
+        </form>
+
+        <div class="admin-user">
+          <button class="admin-notification" type="button" aria-label="View notifications">
+            <span aria-hidden="true"></span>
+          </button>
+          <div class="admin-profile">
+            <span class="admin-avatar" aria-hidden="true">JB</span>
+            <span>
+              <strong>JP Bravo</strong>
+              <small>Logged in</small>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <section class="admin-empty-dashboard" aria-label="Dashboard workspace">
+          <div class="admin-kpi-grid" aria-label="Dashboard summary cards">
+            <article class="admin-kpi-card">
+              <span class="admin-kpi-icon is-blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 6h16v12H4V6Z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <span class="admin-kpi-label">New Brand Inquiries</span>
+              <strong>18</strong>
+              <small>Awaiting review</small>
+            </article>
+            <article class="admin-kpi-card">
+              <span class="admin-kpi-icon is-green" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16" />
+                  <path d="M4 12h16" />
+                  <path d="M4 17h10" />
+                  <path d="m17 15 3 2-3 2v-4Z" />
+                </svg>
+              </span>
+              <span class="admin-kpi-label">Active Campaigns</span>
+              <strong>12</strong>
+              <small>Currently running</small>
+            </article>
+            <article class="admin-kpi-card">
+              <span class="admin-kpi-icon is-amber" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 4h14v16H5V4Z" />
+                  <path d="M8 8h8" />
+                  <path d="M8 12h4" />
+                  <path d="m14 16 2 2 4-5" />
+                </svg>
+              </span>
+              <span class="admin-kpi-label">Content Approval Queue</span>
+              <strong>9</strong>
+              <small>Awaiting manager approval</small>
+            </article>
+            <article class="admin-kpi-card">
+              <span class="admin-kpi-icon is-red" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 6h13" />
+                  <path d="M8 12h13" />
+                  <path d="M8 18h13" />
+                  <path d="M3 6h.01" />
+                  <path d="M3 12h.01" />
+                  <path d="M3 18h.01" />
+                </svg>
+              </span>
+              <span class="admin-kpi-label">Pending Content Submissions</span>
+              <strong>14</strong>
+              <small>Due from creators</small>
+            </article>
+          </div>
+
+          <div class="admin-campaign-overview" aria-label="Completed campaigns overview">
+            <article class="admin-total-card">
+              <span class="admin-total-badge">2026 Milestone</span>
+              <span>Total Completed Campaigns</span>
+              <strong data-completed-total>0</strong>
+              <small>Year-to-date</small>
+            </article>
+
+            <article class="admin-chart-card">
+              <div class="admin-chart-head">
+                <div>
+                  <span>Completed Campaigns</span>
+                  <strong>Per Month</strong>
+                </div>
+                <small>2026 so far</small>
+              </div>
+              <div class="admin-bar-chart" data-completed-chart></div>
+            </article>
+          </div>
+
+          <div class="admin-dashboard-grid" aria-label="Dashboard operational summary">
+            <article class="admin-panel-card">
+              <div class="admin-panel-head">
+                <span>Today</span>
+                <strong>Today's Schedule</strong>
+              </div>
+              <ul class="admin-schedule-list">
+                <li>
+                  <time>10:00 AM</time>
+                  <span>Client discovery call</span>
+                </li>
+                <li>
+                  <time>1:30 PM</time>
+                  <span>Creator content review</span>
+                </li>
+                <li>
+                  <time>4:00 PM</time>
+                  <span>Campaign follow-up</span>
+                </li>
+              </ul>
+              <div class="admin-add-row">
+                <input type="text" placeholder="Add schedule or reminder..." aria-label="Add schedule" />
+                <button type="button">Add</button>
+              </div>
+            </article>
+
+            <article class="admin-panel-card">
+              <div class="admin-panel-head">
+                <span>Work Queue</span>
+                <strong>To-do Tasks</strong>
+              </div>
+              <ul class="admin-task-list">
+                <li>
+                  <input type="checkbox" aria-label="Mark review pending creator submissions complete" />
+                  <p>Review pending creator submissions</p>
+                </li>
+                <li>
+                  <input type="checkbox" aria-label="Mark send proposal complete" />
+                  <p>Send proposal to new brand inquiry</p>
+                </li>
+                <li>
+                  <input type="checkbox" aria-label="Mark confirm posting schedule complete" />
+                  <p>Confirm posting schedule for active campaign</p>
+                </li>
+              </ul>
+              <div class="admin-add-row">
+                <input type="text" placeholder="Add to-do task..." aria-label="Add to-do task" />
+                <button type="button">Add</button>
+              </div>
+            </article>
+
+            <article class="admin-panel-card">
+              <div class="admin-panel-head">
+                <span>Performance</span>
+                <strong>Top Brands in 2026</strong>
+              </div>
+              <ol class="admin-brand-rank">
+                <li>
+                  <span>01</span>
+                  <strong>Globe</strong>
+                  <small>8 campaigns</small>
+                </li>
+                <li>
+                  <span>02</span>
+                  <strong>Jollibee</strong>
+                  <small>6 campaigns</small>
+                </li>
+                <li>
+                  <span>03</span>
+                  <strong>Shopee</strong>
+                  <small>5 campaigns</small>
+                </li>
+              </ol>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const completedCampaigns2026 = [
+        { month: "Jan", count: 4 },
+        { month: "Feb", count: 6 },
+        { month: "Mar", count: 5 },
+        { month: "Apr", count: 8 },
+        { month: "May", count: 7 },
+        { month: "Jun", count: 0 },
+        { month: "Jul", count: 0 },
+        { month: "Aug", count: 0 },
+        { month: "Sep", count: 0 },
+        { month: "Oct", count: 0 },
+        { month: "Nov", count: 0 },
+        { month: "Dec", count: 0 },
+      ];
+
+      const now = new Date();
+      const targetYear = 2026;
+      const visibleMonthCount =
+        now.getFullYear() > targetYear
+          ? 12
+          : now.getFullYear() === targetYear
+            ? now.getMonth() + 1
+            : 0;
+      const visibleCampaigns = completedCampaigns2026.slice(0, visibleMonthCount);
+      const totalCompleted = visibleCampaigns.reduce((sum, item) => sum + item.count, 0);
+      const highestCount = Math.max(...visibleCampaigns.map((item) => item.count), 1);
+
+      document.querySelector("[data-completed-total]").textContent = totalCompleted;
+      document.querySelector("[data-completed-chart]").innerHTML = visibleCampaigns
+        .map((item) => {
+          const height = Math.max((item.count / highestCount) * 100, item.count > 0 ? 12 : 4);
+          return `
+            <div class="admin-bar-item">
+              <strong>${item.count}</strong>
+              <span style="height: ${height}%"></span>
+              <small>${item.month}</small>
+            </div>
+          `;
+        })
+        .join("");
+    </script>
+  </body>
+</html>
